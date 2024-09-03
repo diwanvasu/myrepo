@@ -8,6 +8,6 @@
 
   - name: Install the package "httpd"
     yum:
-      name: httpd -y
+      name: httpd
       state: present
       update_cache: yes
