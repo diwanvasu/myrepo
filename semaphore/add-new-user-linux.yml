@@ -17,7 +17,6 @@
      user:
        name: '{{item}}'
        shell: /bin/bash
-       groups: dbusers
        append: yes
        state: present
      with_items: "{{users}}"
