@@ -16,10 +16,10 @@
       #   password: pravin1
 
   tasks:
-    - name: Adding users
-      user:
+    # - name: Adding users
+      users:
         name: "{{item}}"
         shell: /bin/bash
         append: yes
         state: present
-      #with_items: "{{users}}"
+      # with_items: "{{users}}"
