@@ -1,15 +1,17 @@
----
 - hosts: demo
   become: true
   become_method: sudo
-
   tasks:
-    #- name: create user
-      user: name= "{{item.name}}"
+    - name: create user
+      user: 'name= "{{item.name}}"'
       state: present
-      group: "{{item.group}}"
+      group: '{{item.group}}'
       with_items:
-        - { name: vasim, group: vasim }
-        - { name: vasim1, group: vasim1 }
-        - { name: vasim2, group: vasim2 }
-        - { name: vasim3, group: vasim3 }
+        - name: vasim
+          group: vasim
+        - name: vasim1
+          group: vasim1
+        - name: vasim2
+          group: vasim2
+        - name: vasim3
+          group: vasim3
