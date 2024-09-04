@@ -3,14 +3,11 @@
   become: true
   become_method: sudo
 
-  # vars:
+  vars:
     # users:
-  tasks:
       - name: vasim
         group: vasim
         password: vasim1
-        state: present
-        
       # - name: diwan
       #   group: diwan
       #   password: diwan1
@@ -18,11 +15,11 @@
       #   group: pravin
       #   password: pravin1
 
-  # tasks:
-  #   - name: Adding users
-  #     user:
-  #       name: "{{item}}"
-  #       shell: /bin/bash
-  #       append: yes
-  #       state: present
-  #     with_items: "{{vasim, }}"
+  tasks:
+    - name: Adding users
+      user:
+        name: "{{item}}"
+        shell: /bin/bash
+        append: yes
+        state: present
+      with_items: "{{user}}"
