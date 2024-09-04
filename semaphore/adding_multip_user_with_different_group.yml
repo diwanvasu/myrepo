@@ -6,7 +6,7 @@
   # vars:
     # users:
   tasks:
-      - name: vasim
+      - user: vasim
         group: vasim
         password: vasim1
       # - name: diwan
