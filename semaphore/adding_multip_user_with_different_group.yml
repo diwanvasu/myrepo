@@ -1,0 +1,25 @@
+---
+hosts: demo
+become: yes
+connection: ssh
+
+vars:
+  users:
+    - name: vasim
+      group: vasim
+      password: vasim1
+    - name: diwan
+      group: diwan
+      password: diwan1
+    - name: pravin
+      group: pravin
+      password: pravin1
+
+tasks:
+  - name: Adding users
+    user:
+      name: "{{item}}"
+      shell: /bin/bash
+      append: yes
+      state: present
+    with_items: "{{users}}"
