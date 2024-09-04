@@ -4,7 +4,7 @@
   become_method: sudo
 
   vars:
-     users:
+    users:
       - name: vasim
         group: vasim
         password: vasim1
@@ -17,9 +17,9 @@
 
   tasks:
     # - name: Adding users
-      users:
-        name: "{{item}}"
-        shell: /bin/bash
-        append: yes
-        state: present
-      # with_items: "{{users}}"
+    users:
+      name: "{{item}}"
+      shell: /bin/bash
+      append: yes
+      state: present
+    # with_items: "{{users}}"
