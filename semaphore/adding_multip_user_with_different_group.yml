@@ -2,7 +2,7 @@
   become: true
   become_method: sudo
   tasks:
-    - name: create user
+      name: create user
       user: 'name= "{{item.name}}"'
       state: present
       group: '{{item.group}}'
@@ -15,3 +15,4 @@
           group: vasim2
         - name: vasim3
           group: vasim3
+
