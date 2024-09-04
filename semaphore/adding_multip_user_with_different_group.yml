@@ -20,6 +20,6 @@
      user:
        name: "{{item}}"
        shell: /bin/bash
-       append: yes
+       #append: yes
        state: present
      with_items: "{{users}}"
