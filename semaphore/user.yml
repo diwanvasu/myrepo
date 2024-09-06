@@ -1,0 +1,11 @@
+---
+- name: creating user
+  hosts: demo
+  become: True
+
+  tasks:
+    - user:
+        name: name1
+        state: present
+        name: diwan
+        state: present
