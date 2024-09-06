@@ -5,7 +5,6 @@
 
   tasks:
     - user:
-        name: name1
-        state: present
         name: diwan
-        state: adsent
+        state: absent
+    
