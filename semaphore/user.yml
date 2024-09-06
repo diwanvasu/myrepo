@@ -7,5 +7,6 @@
     - user:
         name: name1
         state: present
-        group: vasim
+    - group: 
+        name: vasim
         state: present
