@@ -8,4 +8,4 @@
         name: name1
         state: present
         name: diwan
-        state: present
+        state: adsent
