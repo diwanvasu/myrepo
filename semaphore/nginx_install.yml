@@ -1,0 +1,43 @@
+---
+- name: Install Nginx and Configure Firewalld
+  hosts: localhost
+  become: true
+  tasks:
+    - name: Update the APT cache
+      apt:
+        update_cache: yes
+
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Install Firewalld
+      apt:
+        name: firewalld
+        state: present
+
+    - name: Ensure Firewalld is started and enabled
+      service:
+        name: firewalld
+        state: started
+        enabled: true
+
+    - name: Allow SSH (Port 22) through Firewalld
+      firewalld:
+        service: ssh
+        permanent: true
+        state: enabled
+        zone: public
+        immediate: yes
+
+    - name: Disable HTTP (Port 80) through Firewalld
+      firewalld:
+        service: http
+        permanent: true
+        state: disabled
+        zone: private
+        immediate: yes
+
+    - name: Reload Firewalld to apply changes
+      command: firewall-cmd --reload
